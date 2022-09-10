@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .he {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            animation-name: example;
+            animation-duration: 5s;
+        }
+
+        @keyframes example {
+            0% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+
+            25% {
+                background-color: yellow;
+                left: 400px;
+                top: 0px;
+            }
+
+            50% {
+                background-color: blue;
+                left: 400px;
+                top: 400px;
+            }
+
+            75% {
+                background-color: green;
+                left: 0px;
+                top: 400px;
+            }
+
+            100% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <button class="stop">stop</button>
+    </div>
+
+    <div class="he">
+
+    </div>
+
+
+
+    <script>
+        (
+            function () {
+                var move = document.querySelector('.he');
+                move.addEventListener("click",function(){
+                    var stop = document.querySelector('.stop')  ;
+                    stop.addEventListener("slide",function(){
+
+                    });
+                    stop.addEventListener("click",function(){
+                        stop.addEventListener();
+                    })
+                })
+            }
+
+        )
+
+
+    </script>
+
+
+</body>
+
+</html>

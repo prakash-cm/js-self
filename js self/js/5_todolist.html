@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .full {
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, purple, pink);
+        }
+
+        .hemain {
+            width: 100%;
+            padding: 5px 10px;
+            background-color: aquamarine;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        .main1 {
+            width: 40%;
+            margin: auto;
+            padding: 10px 5px;
+            z-index: 222224654;
+        }
+
+        .headd {
+            width: 100%;
+            padding: 10px 0px;
+            background-color: wheat;
+
+        }
+
+        .active1 {
+            display: none;
+        }
+
+        .collection {
+            width: 40%;
+            padding: 20px 0px;
+            /* background-color: blueviolet; */
+            /* position: absolute;
+            top: 320px; */
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="full">
+        <!-- header start -->
+        <div class="hemain"><span id="addd1" style="cursor:pointer; font-size: 30px; ">+</span>
+        </div>
+        <!-- header end  -->
+        <!-- popup start -->
+        <div class="main1 active1">
+            <div class="headd">
+
+                <div style="width:95%; margin: auto;">
+                    <input class="data1" style="width: 100%; margin: auto;" type="text" placeholder="Tital">
+                </div>
+
+                <div style="width:95%; margin: auto; padding: 10px 0px;">
+                    <textarea class="desc" name="mytaxt" cols="52" rows="10" placeholder="Write your Text"></textarea>
+                    <button class="btn1">Submit</button>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- popup end -->
+
+        <!-- collection  -->
+        <div class="collection" id="collect">
+
+        </div>
+    </div>
+    <div class="hh">
+
+        
+
+    </div>
+
+    <script>
+        var toDoNotes = [];
+        const a = document.querySelector("#addd1");
+        const b = document.querySelector(".main1");
+        a.addEventListener("click", () => {
+            b.classList.contains('active1') ? b.classList.remove('active1') : b.classList.add('active1')
+        })
+
+
+        document.querySelector(".btn1").addEventListener('click', () => {
+            let data1 = document.querySelector(".data1");
+            let desc = document.querySelector(".desc");
+            let dataObj = new Object();
+            dataObj.title = data1.value;
+            dataObj.desc = desc.value;
+            toDoNotes.push(dataObj)
+            dataRender();
+            deleteRender();
+            editRender();
+        })
+
+
+        const dataRender = () => {
+            document.querySelector("#collect").innerHTML = toDoNotes.map((eleObj) => {
+                return `<div class="mprint" style="width: 95%;background-color: azure; margin:3px 0px; ">                
+                <button class="edit edittodo">
+                edit</button>
+                <button class="edit delete">
+                Del</button>
+                <span class="printe">Title : ${eleObj.title}</span>
+                <p> ${eleObj.desc}</p>
+                    </div>`
+            }).join(" ")
+        };
+
+        const deleteRender = () => {
+            const deleteRe = document.querySelectorAll(".delete")
+            deleteRe.forEach((v, i) => {
+                v.addEventListener("click", () => {
+
+                    toDoNotes.splice(i, 1);
+                    dataRender();
+                    deleteRender();
+                    editRender();
+                })
+            })
+        }
+
+
+        const editRender = () => {
+            const editRe = document.querySelectorAll(".edittodo")
+            editRe.forEach((v, i) => {
+                v.addEventListener("click", () => {
+                    var data = toDoNotes[i];
+                    data.title = 
+                    
+                    document.querySelector(".hh").innerHTML=toDoNotes.map((upobj)=>{
+                     return`<div style="width:95%; margin: auto;">
+            <input class="upin" style="width: 100%; margin: auto;" type="text" placeholder="title" ${upobj.title}>
+        </div>
+
+        <div style="width:95%; margin: auto; padding: 10px 0px;">
+            <textarea class="updec" name="mytaxt" cols="52" rows="10" placeholder="Write your Text" ${upobj.title}></textarea>
+            <button class="up">update</button>
+        </div>`
+                    })
+                    toDoNotes.splice(i, 1, data);
+                    toDoNotes.push()
+                    dataRender();
+                    deleteRender();
+                    editRender();
+
+                })
+            })
+        }
+
+
+    </script>
+</body>
+
+</html>

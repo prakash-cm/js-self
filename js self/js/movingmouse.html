@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouse</title>
+    <style>
+       
+
+        .move {
+            
+            box-sizing: border-box;
+            pointer-events: none;
+            position: absolute;
+        }
+        .d2{
+            width: 500px;
+            height: 500px;
+            background-color: antiquewhite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            transition: 0s;
+            position: relative;
+            cursor: ;
+           
+            
+            
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <h2>hello</h2>
+    <div class="d2">
+        <div class="move"> 🐭</div>
+        <h2>🐱</h2>
+    </div>
+    
+
+
+    <script>
+        var move = document.querySelector('.move')
+        document.addEventListener("mousemove", function (a) {
+            var t = a.clientX;
+            var x = a.clientY;
+            move.style.left = t + "px";
+            move.style.top = x + "px";
+        })
+    </script>
+</body>
+
+</html>

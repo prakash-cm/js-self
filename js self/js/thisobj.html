@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //this method
+
+
+    //     var obj = {name:"prakash", age:"20",fun:function(){
+    //         console.log(this.name , this.age)
+    //     }}
+    //    obj.fun()
+
+
+    // for in loop
+
+        // var object = {a:20,b:30,c:40 ,d:50}
+        // for(let obj in object){
+        //     console.log(`${object[obj]}`);
+        // }
+
+
+    // Symbol 'S' always in caps this is a data type
+
+    // var x = Symbol("prakash")
+    // var y = Symbol("prakash")
+    // console.log(x,y);
+    // console.log(x==y); false  
+    // console.log(typeof x); Symbol
+
+    // let id = Symbol("hello")
+    // console.log(id);
+    // // alert(id)
+    // // alert(id.description)
+    // // alert(id.toString)
+    // console.log(id.toString);
+
+
+    //symbol use in object  // symbol ko ham for in mai use ni kar skte hai
+
+            let age = Symbol("age")
+
+            let user= {
+                name:"prakash",
+                class:"btech",
+                [age]:24
+            }
+            // console.log(user);
+            for(let key in user){
+                console.log(`${user[key]}`);  //symbol ko JSON reject kr deta hai eske liye symbol ko string mai convert krna ho.ga
+            }
+
+
+
+    </script>
+</body>
+</html>

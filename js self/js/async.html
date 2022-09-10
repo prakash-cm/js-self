@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+
+        //Async functio
+
+            async function test(){
+                return "Prakash";
+            }
+           console.log (test())
+
+        // async function test(){
+        //         return "Prakash";
+        //     }
+        //    test().then((prakash)=>{
+        //     console.log(prakash);
+        //    });
+
+
+        // let test= async () => "Prakash";
+
+        //    test().then((prakash)=>{
+        //     console.log(prakash);
+        //    });
+
+        // async ()=>{
+        //     console.log("i");
+        //     console.log("am");
+        //     console.log("prakash");
+        //   await  console.log("gopalganj");
+        // }
+        // console.log("from");
+
+
+        // async function test1(){
+        //     console.log("2:message");
+        //    await console.log("3:message");
+        //     console.log("4:message");
+        // }
+        // console.log("1:message");
+        // test1();
+        // console.log("5:message");
+
+        //     async function test2(){
+        //         console.log("2:message");
+        //        const response = await fetch("student.json")
+        //         console.log("3:message");
+        //         const student=await response.json();
+
+        //         return student;
+        //     }
+        //     console.log("1:message");
+        //   let h=   test2();
+        //     console.log("4:message");
+        //     console.log(h);
+
+
+        // async function test2() {
+        //     const response = await fetch("student.json")
+        //     const student = await response.json();
+
+        //     return student;
+        // }
+
+        // let h = test2()
+        // console.log(h);
+
+
+        // async function test2() {
+        //     const response = await fetch("student.json")
+        //     const student = await response.json();
+
+        //     return student;
+        // }
+        // test2().then((res)=>{
+        //     console.log(res);
+        // }).catch((error)=>{
+        //     console.log("error");
+        // })
+
+        // async function test2() {
+        //     // const response = await fetch("student.json")
+        //     // const student = await response.json();
+
+        //     // return student;
+        //     return(await fetch("student.json")).json();
+        // }
+        // test2().then((res)=>{
+        //     console.log(res);
+        // }).catch((error)=>{
+        //     console.log("error");
+        // })
+
+        
+        async function test2() {
+            try{
+                const response = await fetch("student.json")
+            const student = await response.json();
+
+            return student;
+            }
+            catch(error){
+            console.log("error");
+        }
+            
+        }
+        test2().then((res)=>{
+            console.log(res);
+        });
+    </script>
+</body>
+
+</html>

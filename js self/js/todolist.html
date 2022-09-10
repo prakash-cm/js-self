@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .full {
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, purple, pink);
+        }
+
+        .hemain {
+            width: 100%;
+            padding: 5px 10px;
+            background-color: aquamarine;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        .main1 {
+            width: 40%;
+            margin: auto;
+            padding: 10px 5px;
+            z-index: 222224654;
+        }
+
+        .main2 {
+            width: 40%;
+            margin: auto;
+            padding: 10px 5px;
+            z-index: 222224654;
+            display: none;
+        }
+
+        .headd {
+            width: 100%;
+            padding: 10px 0px;
+            background-color: wheat;
+
+        }
+
+        .active1 {
+            display: none;
+        }
+
+        .collection {
+            width: 40%;
+            padding: 20px 0px;
+            /* background-color: blueviolet; */
+            /* position: absolute;
+            top: 320px; */
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="full">
+        <!-- header start -->
+        <div class="hemain">
+            <h3 style="padding: 2px 0px;">ToDoList</h3><span id="addd1" style="cursor:pointer; font-size: 30px; ">  +</span>
+        </div>
+        <!-- header end  -->
+        <!-- popup start -->
+        <div class="main1 active1">
+            <div class="headd">
+
+                <div style="width:95%; margin: auto;">
+                    <input class="data1" style="width: 100%; margin: auto;" type="text" placeholder="Title">
+                </div>
+
+                <div style="width:95%; margin: auto; padding: 10px 0px;">
+                    <textarea class="desc" name="mytaxt" cols="52" rows="10" placeholder="Write your Text"></textarea>
+                    <button class="btn1">Submit</button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- popup end -->
+
+        <!-- update  -->
+
+
+        <div class="main2 ">
+            <div class="headd">
+
+                <div style="width:95%; margin: auto;">
+                    <textarea class="desc11" name="mytaxt" cols="52" rows="2" placeholder="Title"></textarea>
+                </div>
+
+                <div style="width:95%; margin: auto; padding: 10px 0px;">
+                    <textarea class="desc11" name="mytaxt" cols="52" rows="10" placeholder="Write your Text"></textarea>
+                    <input type="hidden" class="desc11">
+                    <button class="btn-update">Update</button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- collection  -->
+        <div class="collection" id="collect">
+
+        </div>
+
+
+    </div>
+
+
+    <script>
+        const a = document.querySelector("#addd1");
+        const b = document.querySelector(".main1");
+        a.addEventListener("click", () => {
+            b.classList.contains('active1') ? b.classList.remove('active1') : b.classList.add('active1')
+        })
+
+
+        document.querySelector(".btn1").addEventListener('click', () => {
+
+            let data1 = document.querySelector(".data1");
+            let desc = document.querySelector(".desc");
+            let dataObj = new Object();
+            dataObj.title = data1.value;
+            dataObj.desc = desc.value;
+            if(localStorage.getItem('todo')){
+              const toDoNotes =   JSON.parse(localStorage.getItem("todo"))
+              toDoNotes.push(dataObj)
+              localStorage.setItem("todo",JSON.stringify(toDoNotes));
+            }
+            else{
+                const toDoNotes = [];
+                toDoNotes.push(dataObj)
+                localStorage.setItem("todo",JSON.stringify(toDoNotes));
+            }
+            dataRender();
+            deleteRender();
+            editRender();
+        })
+
+
+        const dataRender = () => {
+            if(localStorage.getItem('todo')){
+                    const toDoNotes =   JSON.parse(localStorage.getItem("todo"));
+                    document.querySelector("#collect").innerHTML = toDoNotes.map((eleObj) => {
+                        return `<div class="mprint" style="width: 95%;background-color: lightgray; margin:3px 0px; border: 1px solid black; ">                
+                        <button class="edit edittodo">edit</button>
+                        <button class="edit delete">Delete</button>
+                        <span class="printe">Title : ${eleObj.title}</span>
+                        <p style="padding:3px 0px ; border: 1px solid black;" >Description : ${eleObj.desc}</p>
+                            </div>`
+                    }).join(" ")
+        }
+        };
+
+        const deleteRender = () => {
+            const deleteRe = document.querySelectorAll(".delete")
+            deleteRe.forEach((v, i) => {
+                v.addEventListener("click", () => {
+                    console.log("del")
+                    const toDoNotes =   JSON.parse(localStorage.getItem("todo"));
+                    toDoNotes.splice(i, 1);
+                    localStorage.setItem("todo",JSON.stringify(toDoNotes));
+                    dataRender();
+                    deleteRender();
+                    editRender();
+                })
+            })
+        }
+
+
+        const des11 = document.querySelectorAll(".desc11");
+        const main2 = document.querySelector(".main2")
+
+        const editRender = () => {
+            const editRe = document.querySelectorAll(".edittodo")
+            editRe.forEach((v, i) => {
+                v.addEventListener("click", () => {
+                    main2.style.display = "none";
+                    main2.style.display = "block";
+                    var data = toDoNotes[i];
+                    des11[0].value = data.title;
+                    des11[1].value = data.desc;
+                    des11[2].value = i;
+                    // data.title = "puushotam"
+                    // toDoNotes.splice(i, 1, data);
+                    // dataRender();
+                    // deleteRender();
+                    // editRender();
+
+                })
+            })
+        }
+
+        document.querySelector(".btn-update").addEventListener("click", () => {
+            let obj = {}
+            obj.title = des11[0].value;
+            obj.desc = des11[1].value;
+            const toDoNotes =   JSON.parse(localStorage.getItem("todo"));
+            toDoNotes.splice(des11[2].value, 1, obj);
+            localStorage.setItem("todo",JSON.stringify(toDoNotes));
+            dataRender();
+            deleteRender();
+            editRender();
+
+        })
+
+
+dataRender()
+deleteRender();
+editRender();
+
+
+
+
+//         data.title = document.querySelector(".main2").innerHTML = toDoNotes.map((xyz) => {
+
+// return ``
+//                     })
+
+
+    </script>
+</body>
+
+</html>

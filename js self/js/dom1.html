@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <!--DOM(document objec model)-->
+    <!--predefined function-->
+    <!--
+        document.write(browser pe print krta hai)
+                .getElementById();
+                .getElementByClassName();
+                .getElementByTageName();
+                .querySelector();
+                .querySelctorAll();
+                .title();
+                .body();
+                .form();
+                .cookie();
+                .createElement();
+    -->
+
+    <!-- event (atributs)
+        onclick
+        ondbclick
+        onscroll
+        onmouseover
+        onmouseout
+        onmousemove
+        onmouserelease
+        onkeyup
+        onkeydown
+        onkeyrelease
+        oncontextmenu
+        ondrag
+        onkeyenter
+        onmouseleave
+
+    -->
+       <!-- <h1 id="k" style="color: rgb(45, 147, 47);">HELLO</h1>-->
+   <!-- <input type="text" id="j">
+     <button onclick="prakash()">click</button>-->
+
+     <input type="text"Placeholder="Entercity name" id="from" style="background-color: antiquewhite; height: 30px;width: 350px;">
+     <button onclick="change()" style="background-color: red;">Exchange</button>
+     <input type="text"Placeholder="Destination City name" id="end" style="background-color: antiquewhite; height: 30px;width: 350px;">
+
+        <script>
+            // (function(){
+            //     var x=document.getElementById('k')
+            //     x.innerHTML="world"
+            //     x.style="color :red;"
+            // })()
+
+            // var x=document.getElementById('k')
+            // x.innerHTML="wolrd"
+            // x.style.backgroundColor="red"
+            // x.style.fontSize="40px";
+                
+            // const prakash=()=>{
+            //     var x= document.getElementById('j')
+            //     var p= x.value;                    not working
+            //     x.Placeholder="enter name"
+            // }
+
+            const change=()=>{
+                var x=document.getElementById("from")
+                var t=document.getElementById("end")
+                var z=x.value
+                x.value=t.value
+                t.value=z;
+            }
+
+            
+            
+        </script>
+</body>
+</html>

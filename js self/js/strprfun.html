@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <script>
+
+
+        // str.length(string ka length pta karne ke liye use krte hai)
+
+        // var str= "welcome back"
+        // let a= str.length
+        // console.log(a)      return type - number
+
+
+        //str.concat(string mai strng ad krne ke liye use krte hai )
+
+        // var x =str.concat(" world")
+        // console.log(x)     return type- "string"
+
+
+        //srt.split  (string ko split krne ke liye use krte hai) 
+         
+        // var x = str.split("c")
+        // console.log(x)      return type-array
+
+
+        //str.includes(string search krne ke liye use krte hai ki string mai searched hai ya ni )
+
+        // var x = str.includes("come")
+        // console.log(x)    return type-boolean
+
+        // problem with quetion
+        // var arr=[{data:[ {title:"hii i am prakash"},{title:"welcome back home"} ]} ]
+        // var x =arr[0].data[1].title.includes("home")
+        // console.log(x)
+
+
+        //str.substring (kisi bhi string mai se cut kr ke new string bnata hai)
+
+        // var str= "welcome back"
+        // var x =str.substring(3,7)
+        // console.log( x)   return type-string
+
+
+        //str.indexOf(kisi bhi string mai kisi ek latter ka index value btata hai suru se count kr ke)
+
+        // var x =str.indexOf('e',2)..... 2nd wala e ni bta rha hai
+        // console.log( x) return type-number
+
+
+  //str.lastIndexOf(kisi bhi string mai kisi ek latter ka index value btata hai last se count kr ke)
+
+        // var x =str.lastIndexOf('e')
+        // console.log(x) return type-number
+            
+    //     var str ="prakash@kumar@gmail.com"
+    //    var h = str.indexOf('@')
+    //     var k =str.indexOf('@',str.indexOf('@')+1)
+    //     console.log(k)
+    //     if(h<k){
+    //         console.log("right")
+    //     }
+    //     else{
+    //         console.log("wrong")
+    //     }
+        
+//         var size = 3;
+// // var myArray = Array(size).fill( Array(size).fill("6") );
+// // console.log(myArray);
+
+        //  var str = "welcome back" ;
+        // var x = str.indexOf('c',4)
+        // console.log(x)
+
+
+        //arr.join(white space remove krta hai or add bhi rta kuch bhi string ke baad mai )
+
+    //     var arr = ["bhagel" ,"mota" ,"dabas",]
+    //     var f = arr.join("beta")
+    // console.log(typeof f)     return type-string
+
+
+
+  //lastIndexOf
+    // var str = "i am prakash"
+    //   var j = str.lastIndexOf('a')  
+    //   console.log(j);
+
+
+    //// replace,repalce all(given latter or string ko replce krte hai or replce same latter pe sare pe replace kr deta hai )
+
+        // var str ="spider man no way home"
+        // // var w = str.replace('a', 'gob')
+        // var w = str.replaceAll('a', 'gob')  return type- string
+        // console.log(w);
+
+
+       // str.startsWith(),endsWith( ye check krta start or end mai ki given string hai ya ni)
+
+        //startswith...endswith
+        // var str= "welcom to delhi"
+        // // var d=str.startsWith('w',3)
+        // var j=str.endsWith('i')   return type- boolean
+        // console.log(j)
+
+
+            //......pre define function of Array.......///....//.../
+
+            //arr.push(last mai elemet add krta hai)
+
+        //     var arr=[29,33,44,55,23]
+        //    var h= arr.push(76)
+        //    var w= arr.push(true)
+        //    var d= arr.push("hello")   return type - array
+        //     console.log(arr);  kuch bhi push kr skte hai
+
+       // arr.pop(last mai delete krta hai)
+        
+        // var arr=[29,33,44,55,23];
+        // var t =arr.pop();
+        // console.log( arr); // return type - array
+
+
+
+        // arr.shift(//ye age se element delet krta hai)
+
+        // var arr=[29,33,44,55,23]
+        // var f = arr.shift()  
+        // console.log(arr); return type - array
+
+        //arr.unshift(//ye age se element add krta hai)
+        // var arr=[29,33,44,55,23]
+        // var f = arr.unshift(22)  
+        // console.log(arr); return type - array
+
+        //slice(slice(start,end..)ye start or end ke bich ke elemet ko leke new array bna deta hai)
+        // var arr=[29,33,44,55,23]
+        // var t=arr.slice(2,5)  //
+        // console.log(t); return type - array
+
+
+        //splice( splice(index,no.of delete element,insert))
+
+        // var arr=[29,33,44,55,23]
+        // var x =[23,41]
+        // var f = arr.splice(1,1,...x)
+        // console.log(arr);     return type - array
+
+
+
+        //includes(check krta hai array mai element hai ya ni)
+
+
+        // var arr =["hello","world"]
+        // var b=arr.includes("hello") 
+        // console.log(b);   //return type - array
+
+
+
+        //**arr.forEach(eske function ke parameter mai  max 3 parameter dal skte hai eska koi return type ni hota hai)**
+        //1st parameter-value
+        //2nd parameter-index value
+        //3rd parameter-array
+        //
+
+        // var arr=[10,20,30,40,50]
+        // arr.forEach(function(x,y,z){
+        //     console.log(arr);
+        // })
+            // arr.forEach((x,y,z)=>{
+            //     console.log(arr);
+            // })
+
+            var arr ={
+                data:[
+                    {name:"prakash"},
+                    {name:"rahul"},
+                    {name:"rakesh"},
+                    {name:"rohan"},
+                    {name:"bhagel"}
+                ]
+            }
+
+            var list ="<ul>"
+                arr.data.forEach((v)=>{
+                    list+=`<li>${v.name}</li>`
+                })
+                list+="</ul>"
+                console.log( list);
+
+
+
+            //**arr.map(map direct ek array return(return type)krta hai or eska function mai return(return type) mai jo
+            //jo likhnege wohi return krega mtlb ham return mai kuch bhi likh skate hai  )
+
+            // var arr1=[1];
+            // var x = arr1.map(function(v){
+            //     return "prakash";
+            // })
+            // console.log(x);   
+         
+        //    var x= arr1.map((v)=>{
+        //         return ["<li>prakash</li>", "<li>rahul</li>","<li>rakesh</li>","<li>bhagel</li>"];
+        //     })
+        //     console.log(x)
+
+        // var list ="<ul>"
+        //     arr.data.map((v)=>{
+        //         return list+=`<li>${v.name}</li>`;
+        //     })
+        //     list+="</ul>"
+        //     var k=[list]
+        //     console.log(k);
+        //     console.log(list);
+
+
+            /**arr.filter(filter array return krta hai eska function return type boolean hota hai
+             * agar true huaa to value new array mai store krega agr false huaa to ni krenga)
+             */
+            // var arr =[10,20,30,40,50]
+            // var x= arr.data.filter((v)=>{
+            //     return v.name.toLocaleLowerCase().startsWith('r');
+            // }) 
+            // console.log(x);
+
+
+            //reduces(ye array ko reduces krta hai left to right return type number)
+            //reducesRight(right to left reduces krta hai)
+            // var array=[10,20,30,40,50,60]
+            // var x =array.reduceRight((i,j)=>{
+            //     return i-j;
+            // })
+            // console.log(x)
+
+
+           // indexOf // lastIndexOf
+            // var arr2=[10,20,30,40,50,20,30,10,50]
+            // var c= arr2.indexOf(50,5)
+            //     var f = arr2.lastIndexOf(10)
+            // console.log(f);
+
+                
+    // function checkLeapYear(year) {
+
+
+    // if ((0 == year % 4) && (0 != year % 100) || (0 == year % 400)) {
+    // console.log(year + ' is a leap year');
+    // } 
+    // else {
+    // console.log(year + ' is not a leap year');
+    // }
+    // }
+
+    // const year = prompt('Enter a year:');
+
+    // checkLeapYear(year);
+
+
+    </script>
+</body>
+</html>

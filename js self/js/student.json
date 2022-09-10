@@ -1,0 +1,17 @@
+[
+    {
+        "name": "prakash kumar",
+        "age":"23",
+        "city": "gopalganj"
+    },
+    {
+        "name": "akash kumar",
+        "age":"20",
+        "city": "bhitbherwan"
+    },
+    {
+        "name": "rahul kumar",
+        "age":"28",
+        "city": "sasaram"
+    }
+]

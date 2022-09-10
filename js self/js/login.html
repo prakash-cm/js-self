@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <script src='main.js'></script>
+
+</head>
+
+<body>
+    <div style="width: 100%;height: 100%; background-color: rgb(210, 222, 233);">
+        <div style="width: 45% ;height: 45%;  display: inline-block;">
+            <h2 style="font-family:Arial, Helvetica, sans-serif ;">Login Page</h2>
+        </div>
+        <div style="width: 45% ;height: 45%;  display: inline-block;">
+            <button class="b1" onclick="log()" id="a">Login</button>
+        </div>
+    </div>
+
+    <div id="p" class="modal">
+
+        <form>
+            <div class="cross">
+                <span onclick="j()" class="close" id="p">&times;</span>
+            </div>
+
+            <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input class="in" type="text" placeholder="Enter Username" name="uname">
+
+                <label for="psw"><b>Password</b></label>
+                <input class="in" type="password" placeholder="Enter Password" name="psw">
+
+                <button class="b2" type="submit">Login</button>
+            </div>
+
+        </form>
+    </div>
+
+
+
+    <script>
+        log = () => {
+            var x = document.getElementById('p')
+            x.style.display = 'block'
+        }
+
+        j = () => {
+            var z = document.getElementById('p');
+            z.style.display = 'none'
+        }
+
+    </script>
+
+</body>
+
+</html>

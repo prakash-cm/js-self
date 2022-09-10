@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+
+<body>
+    <div style="padding: 5px;
+    background-color: aqua;
+    width: 100%;
+    height: 100%;">
+        <h2 style="color: brown;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-align: center;">Calculator</h2>
+    </div>
+    <div style=" padding: 5px;
+    background-color: rgb(170, 238, 242);
+    width: 100%;
+    height: 50%;
+    ">
+        <form>
+            <p
+                style=" font-size: 25px;
+        font-weight: bold;
+        color:rgb(201, 81, 81);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+                Principal Amount:<input id="p" style=" width: 300px;
+            height: 36px;
+            border-radius: 10px;
+            border-style: groove;
+            border-width: 5px;
+            border-color: rgb(80, 255, 89);"></p>
+            <p
+                style=" font-size: 25px;
+        font-weight: bold;
+        color:rgb(201, 81, 81);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+                Rate:<input id="r" style=" width: 300px;
+            height: 36px;
+            border-radius: 10px;
+            border-style: groove;
+            border-width: 5px;
+            border-color: rgb(80, 255, 89);"></p>
+            <p
+                style=" font-size: 25px;
+        font-weight: bold;
+        color:rgb(201, 81, 81);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+                Month:<input id="n" style=" width: 300px;
+            height: 36px;
+            border-radius: 10px;
+            border-style: groove;
+            border-width: 5px;
+            border-color: rgb(80, 255, 89);"></p>
+            <button onclick="calculate()">Calculate</button>
+            <p id="result"></p>
+        </form>
+    </div>
+    <div class="col-md-12 card mt-2 bg-secondary justify-content-center">
+        <div class="tank mt-5">
+            <div class="fill"></div>
+        </div>
+    </div>
+
+
+    <script>
+        function calculate() {
+            p = document.getElementById("p").value;
+            n = document.getElementById("n").value;
+            r = document.getElementById("r").value;
+            result = document.getElementById("result");
+            result.innerHTML = "The Interest is" + (p * n * r / 100)
+        }
+ const meter = ()=>{
+    const fill = document.querySelector(".fill");
+    const prcnt = document.querySelector(".prcnt").value;
+    // fill.style.width=`${prcnt}%`
+    for(let i=0 ; i<=prcnt ; i++){
+    setTimeout(() => {
+        fill.style.width=`${i}%`;
+    }, i*10);
+    }
+}
+    </script>
+</body>
+
+</html>

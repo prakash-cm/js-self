@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //prototype
+
+        // ye ek tarika jiska use kr ke ham ek object ke features or propety ko ham dusre mai use kr skte hai.
+        //jis mai ham function constructor use krte hai
+
+
+        //constructor function
+
+        function Person() {
+            this.name = 'prakash'
+            this.aage = 23
+        }
+        //creating an object
+
+        const person1 = new Person();
+        const person2 = new Person();
+
+        //adding prototype to functtion constructor
+
+        Person.prototype.address = 'delhi'
+
+        //prototype value of person
+
+        // console.log(Person.prototype);
+
+        //inheriting the property from prototype
+
+        // console.log(person1.address);
+        // console.log(person2.address);
+
+
+        //constructor function
+        //function constructor ek new function object create krta hai or direct calling krta hai constructor function
+
+
+        // create a object in function constructor
+        function Me(first, last, age, address) {
+            this.fName = first
+            this.Lname = last
+            this.Age = age
+            this.Address = address
+        }
+
+        // create a new object
+
+        const iAm = new Me("Prakash","kumar",23,"delhi")
+
+
+        //calling
+
+        // console.log(iAm.fName , iAm.Lname, iAm.Age,iAm.Address);
+
+
+
+        
+    </script>
+
+</body>
+
+</html>

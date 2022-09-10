@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .div1 {
+            width: 49%;
+            background-color: rgb(208, 207, 247);
+            padding: 5px;
+            display: inline-block;
+        }
+
+        .div2 {
+            width: 49%;
+            background-color: rgb(247, 212, 239);
+            padding: 5px;
+            display: inline-block;
+        }
+
+        .p1 {
+            font-size: large;
+            font-weight: bold;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .p2 {
+            font-size: large;
+            font-weight: bold;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        #in1 {
+            border-radius: 4px;
+            margin: 0px 0px 0px 20px;
+            border: 1px solid black;
+            height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <p style="text-align: center; background-color: aqua; margin: auto;"><input type="checkbox" class="chck"
+            style="width:20px ; height: 20px;"></p>
+    <div class="div1">
+        <h1>Temprary Address</h1>
+        <form>
+            <p class="p1">Name:-<input type="text" class="in1" id="in1"></p>
+            <p class="p1">Mobile No:-<input type="number" class="in2" id="in1"></p>
+            <p class="p1">Mail:-<input type="email" class="in3" id="in1"></p>
+            <p class="p1">Father's Name:-<input type="text" class="in4" id="in1"></p>
+            <span class="p1">Gender :-</span>
+            <span class="p1">Male</span><input type="radio" class="in5" id="in1">
+            <span class="p1">Female</span><input type="radio" class="in6" id="in1">
+            <p class="p1">DOB:-<input type="date" id="birthday" name="birthday" class="in7" id="in1"></p>
+            <button class="p1">Submit</button>
+        </form>
+    </div>
+    <div class="div2">
+        <h1>Permanent Address</h1>
+        <form>
+            <p class="p2">Name:-<input type="text" class="in11" id="in1"></p>
+            <p class="p2">Mobile No:-<input type="number" class="in22" id="in1"></p>
+            <p class="p2">Mail:-<input type="email" class="in33" id="in1"></p>
+            <p class="p2">Father's Name:-<input type="text" class="in44" id="in1"></p>
+            <span class="p2">Gender :-</span>
+            <span class="p2">Male</span><input type="radio" class="in55" id="in1">
+            <span class="p2">Female</span><input type="radio" class="in66" id="in1">
+            <p class="p2">DOB:-<input type="date" id="birthday" name="birthday" class="in77" id="in1"></p>
+            <button class="p2">Submit</button>
+        </form>
+    </div>
+
+
+    <script>
+      
+        document.querySelector(".chck").addEventListener('click', () => {
+            document.querySelector('.in11').value = document.querySelector('.in1').value;
+            document.querySelector('.in22').value = document.querySelector('.in2').value;
+            document.querySelector('.in33').value = document.querySelector('.in3').value;
+            document.querySelector('.in44').value = document.querySelector('.in4').value;
+            document.querySelector('.in55').value = document.querySelector('.in5').value;
+            document.querySelector('.in66').value = document.querySelector('.in6').value;
+            document.querySelector('.in77').value = document.querySelector('.in7').value;
+
+        })
+
+    </script>
+
+</body>
+
+</html>

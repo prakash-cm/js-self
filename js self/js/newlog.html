@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='main.js'></script>
+    
+    <style>
+        .topnav {
+  overflow: hidden;
+  background-color: rgb(173, 228, 230);
+  width: 300px;
+}
+
+.topnav a {
+
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+
+.topnav .icon {
+  display: none;
+}
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: rgb(81, 57, 57);
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+.b1 {
+    background-color: #000000e0;
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: 4px;
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    right: 15px;
+    top:15px;
+  }
+  .cross {
+    text-align: center;
+    margin:0px 0px 0px 0px;
+    position: relative;
+  }
+
+  .modal {
+    display: none; 
+    position: absolute;  
+    padding-top: 10px;
+  }
+  .l{
+    margin: 30px 0px 0px 0px;
+  }
+    </style>
+</head>
+<body>
+    <div style="width: 100%;height: 100%; background-color: rgb(210, 222, 233);">
+        <div style="width: 45% ;height: 45%;  display: inline-block;">
+    <h2 style="font-family:Arial, Helvetica, sans-serif ;">menu</h2>
+        </div>
+        <div style="width: 45% ;height: 45%;  display: inline-block;">
+    <button class="b1"  onclick="log()" id="b">Menu</button>
+</div>
+</div>
+
+<div id="p" class="modal" >
+  
+    <form >
+     
+      <div class="topnav">
+        <div class="cross">
+            <span onclick="j()" class="close" id="p">&times;</span>
+          </div>
+        <ul class="u" style="list-style-type: none;margin: 10px 0px 0px 0px;">
+            <li class="l"> <a href="#home" >Home</a></li><br>
+             <li class="l"><a href="#news">News</a></li><br>
+             <li class="l"><a href="#contact">Contact</a></li><br>
+             <li class="l"><a href="#about">About</a></li><br>
+        </ul>
+  
+    <script>
+        log=()=>{
+          
+           var x= document.getElementById('p')
+           x.style.display='block'
+        }
+
+        j=()=>{
+            var z=document.getElementById('p');
+            z.style.display='none'
+        }
+
+    </script>
+
+</body>
+</html>
